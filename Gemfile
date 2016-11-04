@@ -39,6 +39,8 @@ gem 'rails-i18n', '~>4.0.1'
 
 gem 'coffee-script-source', '1.8.0'
 
+gem 'execjs'
+
 
 
 
