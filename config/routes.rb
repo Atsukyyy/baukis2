@@ -1,15 +1,25 @@
-Baukis::Application.routes.draw do
+Rails.application.routes.draw do
   namespace :staff do
     root 'top#index'
+    get 'login' => 'sessions#new', as: :login
+    post 'session' => 'sessions#create', as: :session
+    delete 'session' => 'sessions#destroy'
   end
 
   namespace :admin do
     root 'top#index'
+    get 'login' => 'sessions#new', as: :login
+    post 'session' => 'sessions#create', as: :session
+    delete 'session' => 'sessions#destroy'
   end
 
   namespace :customer do
     root 'top#index'
+    get 'login' => 'sessions#new', as: :login
+    post 'session' => 'sessions#create', as: :session
+    delete 'session' => 'sessions#destroy'
   end
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -65,4 +75,3 @@ Baukis::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
