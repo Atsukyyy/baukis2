@@ -14,7 +14,6 @@ class Staff::SessionsController < Staff::Base
       staff_member = StaffMember.find_by(email_for_index: @form.email.downcase)
     end
     if Staff::Authenticator.new(staff_member).authenticate(@form.password)
-<<<<<<< HEAD
       if staff_member.suspended?
         flash.now.alert = 'アカウント停止中です。'
         render action: 'new'
@@ -23,11 +22,6 @@ class Staff::SessionsController < Staff::Base
         flash.notice = 'ログインしました！！'
         redirect_to :staff_root
       end
-=======
-      session[:staff_member_id] = staff_member.id
-      flash.notice = 'ログインしました！！'
-      redirect_to :staff_root
->>>>>>> user_auth2
     else
       flash.now.alert = 'メアドまたはパスワードが正しくないです。。。'
       render action: 'new'
