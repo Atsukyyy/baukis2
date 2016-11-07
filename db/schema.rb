@@ -34,11 +34,7 @@ ActiveRecord::Schema.define(version: 20161106113834) do
     t.string   "hashed_password"
     t.string   "start_date",                     null: false
     t.string   "end_date"
-<<<<<<< HEAD
     t.string   "suspended",        default: false, null: false
-=======
-    t.string   "suspended",        default: "f", null: false
->>>>>>> user_auth2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
