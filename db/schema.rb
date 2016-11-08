@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20161106113834) do
     t.string   "hashed_password"
     t.string   "start_date",                     null: false
     t.string   "end_date"
-    t.string   "suspended",        default: false, null: false
+    t.string   "suspended",        default: "f", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
