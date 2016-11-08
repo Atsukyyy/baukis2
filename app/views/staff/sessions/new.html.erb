@@ -3,7 +3,7 @@
 <div id="login-form">
   <h1><%= @title %></h1>
 
-  <%= form_for @form, url: :staff_session do |f| %>
+  <%= form_for @form, url: :staff_sessions do |f| %>
     <div>
       <%= f.label :email, 'メアド' %>
       <%= f.text_field :email %>
