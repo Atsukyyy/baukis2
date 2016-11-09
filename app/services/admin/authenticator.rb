@@ -8,3 +8,4 @@ class Admin::Authenticator
       @administrator.hashed_password &&
       BCrypt::Password.new(@administrator.hashed_password) == raw_password
   end
+end
