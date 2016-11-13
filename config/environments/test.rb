@@ -33,4 +33,10 @@ Baukis::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  config.baukis = {
+    staff: { host: 'baukis.example.com', path:'' },
+    admin: { host: 'baukis.example.com', path:'admin' },
+    customer: { host: 'example.com', path:'mypage' }
+  }
 end

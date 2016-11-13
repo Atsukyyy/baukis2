@@ -77,4 +77,10 @@ Baukis::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.baukis = {
+    staff: { host: 'baukis.example.com', path:'' },
+    admin: { host: 'baukis.example.com', path:'admin' },
+    customer: { host: 'example.com', path:'mypage' }
+  }
 end
