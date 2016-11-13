@@ -1,4 +1,6 @@
 class StaffMember < ActiveRecord::Base
+  has_many :events, class_name: 'StaffEvent', dependent: :destroy
+  
   before_validation do
     self.email_for_index = email.downcase if email
   end
@@ -8,6 +10,6 @@ class StaffMember < ActiveRecord::Base
       self.hashed_password = BCrypt::Password.create(raw_password)
     elsif raw_password.nil?
       self.hashed_password = nil
-    end    
+    end
   end
 end
