@@ -24,7 +24,7 @@ StaffMember.create!(
   }
 
     20.times do |n|
-      fn = family_names[n % 4],split(':')
+      fn = family_names[n % 4].split(':')
       gn = given_names[n % 5].split(':')
 
       StaffMember.create!(

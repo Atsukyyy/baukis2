@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113085423) do
+ActiveRecord::Schema.define(version: 20161114103420) do
 
   create_table "administrators", force: true do |t|
     t.string   "email",                           null: false
@@ -34,18 +34,19 @@ ActiveRecord::Schema.define(version: 20161113085423) do
   add_index "staff_events", ["staff_member_id", "created_at"], name: "index_staff_events_on_staff_member_id_and_created_at"
 
   create_table "staff_members", force: true do |t|
-    t.string   "email",                          null: false
-    t.string   "email_for_index",                null: false
-    t.string   "family_name",                    null: false
-    t.string   "given_name",                     null: false
-    t.string   "family_name_kana",               null: false
-    t.string   "given_name_kana",                null: false
-    t.string   "hashed_password"
-    t.string   "start_date",                     null: false
+    t.string   "email",                                        null: false
+    t.string   "email_for_index",                              null: false
+    t.string   "family_name",                                  null: false
+    t.string   "given_name",                                   null: false
+    t.string   "family_name_kana",                             null: false
+    t.string   "given_name_kana",                              null: false
+    t.date     "start_date",       limit: 255,                 null: false
     t.string   "end_date"
-    t.string   "suspended",        default: "f", null: false
+    t.boolean  "suspended",         default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
+    t.string   "hashed_password"
   end
 
   add_index "staff_members", ["email_for_index"], name: "index_staff_members_on_email_for_index", unique: true

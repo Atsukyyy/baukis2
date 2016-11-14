@@ -55,7 +55,7 @@ class Admin::StaffMembersController < Admin::Base
 
   def staff_member_params
     params.require(:staff_member).permit(
-    :email, :password, :family_name, :given_name,
+    :email, :password, :password_confirmation, :family_name, :given_name,
     :family_name_kana, :given_name_kana,
     :start_date, :end_date, :suspended
     )
