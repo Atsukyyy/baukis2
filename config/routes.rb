@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     namespace :staff, path: config[:staff][:path] do
       root 'top#index'
       get 'login' => 'sessions#new', as: :login
-      resources :sessions, only: [:create, :destroy]
-      resources :account, except: [:new, :create, :destroy]
+      resource :session, only: [:create, :destroy]
+      resource :account, except: [:new, :create, :destroy]
     end
   #end
 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     namespace :admin, path: config[:admin][:path] do
       root 'top#index'
       get 'login' => 'sessions#new', as: :login
-      resources :sessions, only: [:create, :destroy]
+      resource :session, only: [:create, :destroy]
       resources :staff_members do
         resources :staff_events, only: [:index]
       end

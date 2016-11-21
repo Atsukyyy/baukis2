@@ -6,7 +6,7 @@
   <%=
     if current_administrator
       #binding.pry
-      link_to 'ログアウト', admin_session_path(current_administrator), method: :delete
+      link_to 'ログアウト', :admin_session, method: :delete
       #:admin_session,method: :delete
     else
       #binding.pry

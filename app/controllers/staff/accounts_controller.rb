@@ -1,4 +1,8 @@
-class Staff::AccountsController < Staff:Base
+class Staff::AccountsController < Staff::Base
+  def index
+
+  end
+
   def show
     @staff_member = current_staff_member
   end
@@ -18,7 +22,7 @@ class Staff::AccountsController < Staff:Base
 
   def staff_member_params
     params.require(:staff_member).permit(
-    :email, :family_name, :given_name
+    :email, :family_name, :given_name,
     :family_name_kana, :given_name_kana,
     )
   end

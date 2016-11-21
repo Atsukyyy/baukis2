@@ -4,11 +4,11 @@
   <%= content_tag(:span, flash.alert, class: 'alert') if flash.alert %>
   <%=
     if current_staff_member
-      link_to 'ログアウト', staff_session_path(current_staff_member), method: :delete
+      link_to 'ログアウト', :staff_session, method: :delete
     else
       #binding.pry
       link_to 'ログイン', :staff_login
     end
   %>
-  <%= link_to 'アカウント', staff_account_path(current_staff_member) if current_staff_member %>
+  <%= link_to 'アカウント', :staff_account if current_staff_member %>
 </header>
