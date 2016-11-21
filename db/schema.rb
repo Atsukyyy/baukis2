@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20161114103420) do
     t.string   "given_name_kana",                              null: false
     t.date     "start_date",       limit: 255,                 null: false
     t.string   "end_date"
-    t.boolean  "suspended",         default: false, null: false
+    t.boolean  "suspended",                    default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
