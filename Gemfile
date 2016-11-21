@@ -52,12 +52,18 @@ end
 
 group :development do
   gem 'sqlite3','1.3.8'
+  gem 'pry-rails', '~> 0.3.4'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem 'pry-doc', '~> 0.8.0'    # methodを表示
+  gem 'pry-byebug', '~> 3.3.0' # デバッグを実施(Ruby 2.0以降で動作する)
+  gem 'pry-stack_explorer', '~> 0.4.9.2' # スタックをたどれる
 end
 
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
+
+
 
 
 # Use ActiveModel has_secure_password

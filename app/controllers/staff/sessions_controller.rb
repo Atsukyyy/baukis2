@@ -35,7 +35,9 @@ class Staff::SessionsController < Staff::Base
         flash.now.alert = 'アカウント停止中です。'
         render action: 'new'
       else
-        #session[:staff_member_id] = staff_member_id
+        #binding.pry
+        session[:staff_member_id] = staff_member.id
+        #binding.pry
         staff_member.events.create!(type: 'logged_in')
         flash.notice = 'ログインしました！！'
         redirect_to :staff_root
@@ -50,7 +52,7 @@ class Staff::SessionsController < Staff::Base
     if current_staff_member
       current_staff_member.events.create!(type: 'logged_out')
     end
-    session.delete(staff_member_id)
+    session.delete(:staff_member_id)
     flash.notice = 'ログアウトしました！！'
     redirect_to :staff_root
   end
