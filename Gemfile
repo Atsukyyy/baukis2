@@ -42,7 +42,7 @@ gem 'coffee-script-source', '1.8.0'
 
 gem 'foreigner', '~>1.6.1'
 
-
+gem 'kaminari', '~>0.15.1'
 
 
 group :doc do
