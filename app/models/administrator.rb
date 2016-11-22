@@ -11,4 +11,5 @@ class Administrator < ActiveRecord::Base
       self.hashed_password = nil
     end
   end
+  
 end

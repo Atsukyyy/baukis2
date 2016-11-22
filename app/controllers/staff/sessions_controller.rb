@@ -1,4 +1,6 @@
 class Staff::SessionsController < Staff::Base
+  skip_before_action :authorize
+
   def new
     if current_staff_member
       redirect_to :staff_root
@@ -38,6 +40,7 @@ class Staff::SessionsController < Staff::Base
         #binding.pry
         session[:staff_member_id] = staff_member.id
         #binding.pry
+        session[:last_access_time] = Time.current
         staff_member.events.create!(type: 'logged_in')
         flash.notice = 'ログインしました！！'
         redirect_to :staff_root
