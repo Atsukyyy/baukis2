@@ -28,8 +28,9 @@ class StaffMember < ActiveRecord::Base
       self.password_digest = nil
     end
   end
-  
+
   def active?
+    #binding.pry
     !suspended? && start_date <= Date.today && (end_date.nil? || end_date > Date.today)
   end
 end

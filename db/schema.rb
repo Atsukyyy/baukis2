@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114103420) do
+ActiveRecord::Schema.define(version: 20161122143535) do
 
   create_table "administrators", force: true do |t|
     t.string   "email",                           null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20161114103420) do
     t.string   "family_name_kana",                             null: false
     t.string   "given_name_kana",                              null: false
     t.date     "start_date",       limit: 255,                 null: false
-    t.string   "end_date"
+    t.date     "end_date",         limit: 255
     t.boolean  "suspended",                    default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
