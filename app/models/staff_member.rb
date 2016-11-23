@@ -6,6 +6,12 @@ class StaffMember < ActiveRecord::Base
     self.email_for_index = email.downcase if email
   end
 
+  KATAKANA_REGEXP = /¥A[¥p{katakana}¥u{30fc}]+¥z/
+
+  validates :family_name, :given_name, presence: true
+  validates :family_name_kana, :given_name, presence: true,
+    format: { with: KATAKANA_REGEXP, allow_blank: true }
+
   attr_accessor :password
   # attr_accessorは、データベースと連動せず、一時的にブラウザの１回のリクエストを処理する間のみ存在させるメソッド。
 
