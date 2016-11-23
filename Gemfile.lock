@@ -39,7 +39,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    date_validator (0.7.1)
+      activemodel
     debug_inspector (0.0.2)
+    email_validator (1.4.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.7.0)
     foreigner (1.6.1)
@@ -161,6 +165,8 @@ DEPENDENCIES
   bcrypt-ruby (= 3.0.0)
   coffee-rails (~> 4.0.0)
   coffee-script-source (= 1.8.0)
+  date_validator (~> 0.7.0)
+  email_validator (~> 1.4.0)
   foreigner (~> 1.6.1)
   jbuilder (~> 1.2)
   jquery-rails

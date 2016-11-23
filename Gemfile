@@ -44,6 +44,10 @@ gem 'foreigner', '~>1.6.1'
 
 gem 'kaminari', '~>0.15.1'
 
+gem 'date_validator', '~>0.7.0'
+
+gem 'email_validator', '~>1.4.0'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
