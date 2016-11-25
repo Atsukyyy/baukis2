@@ -13,7 +13,7 @@ class StaffMember < ActiveRecord::Base
     self.given_name_kana = normalize_as_furigana(given_name_kana)
   end
 
-  KATAKANA_REGEXP = /¥A[¥p{katakana}¥u{30fc}]+¥z/
+  KATAKANA_REGEXP = /\A[\p{katakana}\u{30fc}]+\z/
 
   validates :email, presence: true, email: { allow_blank: true }
   validates :family_name, :given_name, presence: true
