@@ -48,6 +48,7 @@ gem 'date_validator', '~>0.7.0'
 
 gem 'email_validator', '~>1.4.0'
 
+gem 'jquery-ui-rails', '~>4.2.1'
 
 
 group :doc do
